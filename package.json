@@ -1,0 +1,30 @@
+{
+  "name": "react-portfolio",
+  "version": "0.0.1",
+  "description": "A sleek portfolio design created in React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlesStover/react-portfolio.git"
+  },
+  "keywords": [
+    "reactjs",
+    "react",
+    "portfolio",
+    "Charles",
+    "Stover"
+  ],
+  "author": "Charles Stover",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CharlesStover/react-portfolio/issues"
+  },
+  "homepage": "https://github.com/CharlesStover/react-portfolio#readme",
+  "dependencies": {
+    "@material-ui/core": "^1.3.1",
+    "react": "^16.4.1"
+  }
+}
