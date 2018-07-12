@@ -1,43 +1,45 @@
 {
   "name": "react-portfolio",
-  "version": "0.0.1",
-  "description": "A sleek portfolio design created in React.",
-  "main": "build/index.js",
-  "scripts": {
-    "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CharlesStover/react-portfolio.git"
-  },
-  "keywords": [
-    "reactjs",
-    "react",
-    "portfolio",
-    "Charles",
-    "Stover"
-  ],
+  "version": "0.0.2",
   "author": "Charles Stover",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CharlesStover/react-portfolio/issues"
   },
-  "homepage": "https://github.com/CharlesStover/react-portfolio#readme",
-  "dependencies": {
-    "@material-ui/core": "^1.3.1",
-    "react": "^16.4.1",
-    "react-router-dom": "^4.3.1"
-  },
+  "description": "A sleek portfolio design created in React.",
   "devDependencies": {
+    "@material-ui/core": "^1.3.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^1.0.0",
+    "react": "^16.4.1",
+    "react-router-dom": "^4.3.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.0",
     "webpack-cli": "^3.0.8"
+  },
+  "homepage": "https://github.com/CharlesStover/react-portfolio#readme",
+  "keywords": [
+    "reactjs",
+    "react",
+    "portfolio"
+  ],
+  "license": "MIT",
+  "main": "build/index.js",
+  "peerDependencies": {
+    "@material-ui/core": "^1.3.1",
+    "react": "^16.4.1",
+    "react-router-dom": "^4.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlesStover/react-portfolio.git"
+  },
+  "scripts": {
+    "build": "webpack --display-modules",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
