@@ -14,6 +14,12 @@ module.exports = {
       commonjs2: 'react',
       root: 'React'
     },
+    'react-dom': {
+      amd: 'react-dom',
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      root: 'ReactDOM'
+    },
     'react-router-dom': {
       amd: 'react-router-dom',
       commonjs: 'react-router-dom',
@@ -32,10 +38,7 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         test: /\.js$/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [ 'env' ]
-          }
+          loader: 'babel-loader'
         }
       }
     ]
@@ -50,6 +53,7 @@ module.exports = {
     alias: {
       '@material-ui/core': path.resolve(__dirname, './node_modules/@material-ui/core'),
       'react': path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
       'react-router-dom': path.resolve(__dirname, './node_modules/react-router-dom')
     }
   }
