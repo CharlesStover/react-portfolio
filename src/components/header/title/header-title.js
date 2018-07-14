@@ -1,26 +1,16 @@
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-import bind from 'bind-decorator';
 import React from 'react';
-import Link from 'react-router-dom/Link';
+import Context from '../../../context';
 import headerTitleStyles from './header-title-styles';
-import { Context } from '../../../index';
+import Link from './link/header-title-link';
 
 const context = [ 'title' ];
 
+const contextConsumer = (title) =>
+  <Link children={title} />;
+
 class HeaderTitle extends React.PureComponent {
-
-  @bind
-  contextConsumer(title) {
-    return (
-      <Link
-        children={title}
-        className={this.props.classes.link}
-        to="/"
-      />
-    );
-  }
-
   render() {
     return (
       <Typography
@@ -28,7 +18,7 @@ class HeaderTitle extends React.PureComponent {
         variant="title"
       >
         <Context
-          children={this.contextConsumer}
+          children={contextConsumer}
           get={context}
         />
       </Typography>

@@ -9,9 +9,6 @@ export default (theme) => ({
     paddingLeft: theme.spacing.unit * 3,
     paddingRight: theme.spacing.unit * 3
   },
-  link: {
-    color: theme.palette.common.white
-  },
   [mobileMediaQuery]: {
     root: {
       paddingBottom: theme.spacing.unit,

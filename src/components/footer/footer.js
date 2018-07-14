@@ -1,6 +1,8 @@
 import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
+import { withContext } from 'react-multi-context';
+import Context from '../../context';
 import footerStyles from './footer-styles';
 import Link from './link/footer-link';
 
@@ -40,17 +42,22 @@ const propsSorts = ({ children: child1 }, { children: child2 }) =>
 
 const year = new Date().getFullYear();
 
+
+
 class Footer extends React.PureComponent {
 
   get links() {
-    const props = this.props.links.concat(defaultLinks);
+    const props = this.props.footer.concat(defaultLinks);
     props.sort(propsSorts);
     const links = props.map(mapPropsToLinks);
     return links.reduce(linksReducer, []);
   }
 
   get year() {
-    if (this.props.copyright === year) {
+    if (
+      !this.props.copyright ||
+      this.props.copyright === year
+    ) {
       return year;
     }
     return this.props.copyright + '-' + year;
@@ -70,4 +77,6 @@ class Footer extends React.PureComponent {
   }
 }
 
-export default withStyles(footerStyles)(Footer);
+const FooterContext = withContext(Context, [ 'copyright', 'footer' ])(Footer);
+
+export default withStyles(footerStyles)(FooterContext);
