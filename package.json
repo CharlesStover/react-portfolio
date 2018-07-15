@@ -1,6 +1,6 @@
 {
   "name": "react-portfolio",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Charles Stover",
   "bugs": {
     "url": "https://github.com/CharlesStover/react-portfolio/issues"
@@ -46,6 +46,6 @@
   "dependencies": {
     "@charlesstover/hsl2rgb": "^1.0.0",
     "react-multi-context": "^1.0.6",
-    "react-object-prop": "^1.0.0"
+    "react-object-prop": "^1.0.2"
   }
 }
