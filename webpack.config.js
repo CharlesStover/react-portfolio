@@ -1,32 +1,30 @@
 const path = require('path');
 
+const alias = (pkg) => ({
+  [pkg]: path.resolve(__dirname, './node_modules/' + pkg)
+});
+
 module.exports = {
   entry: './src/index.js',
-  externals: {
-    '@material-ui/core': {
-      amd: '@material-ui/core',
-      commonjs: '@material-ui/core',
-      commonjs2: '@material-ui/core'
+  externals: [
+    {
+      react: {
+        amd: 'react',
+        commonjs: 'react',
+        commonjs2: 'react',
+        root: 'React'
+      }
     },
-    'react': {
-      amd: 'react',
-      commonjs: 'react',
-      commonjs2: 'react',
-      root: 'React'
-    },
-    'react-dom': {
-      amd: 'react-dom',
-      commonjs: 'react-dom',
-      commonjs2: 'react-dom',
-      root: 'ReactDOM'
-    },
-    'react-router-dom': {
-      amd: 'react-router-dom',
-      commonjs: 'react-router-dom',
-      commonjs2: 'react-router-dom'
-    }
-  },
-  mode: 'production',
+    /^\@material\-ui\/core\/.*/,
+    '@charlesstover/hsl2rgb',
+    'react-multi-context',
+    'react-object-prop',
+    'react-router-dom',
+    'react-router-dom/Link',
+    'react-router-dom/Route',
+    'react-router-dom/Switch'
+  ],
+  mode: 'development',
   module: {
     rules: [
       {
@@ -44,17 +42,20 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'index.js',
+    filename: 'react-portfolio.js',
+    library: 'react-portfolio',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, 'build'),
     umdNamedDefine: true
   },
   resolve: {
     alias: {
-      '@material-ui/core': path.resolve(__dirname, './node_modules/@material-ui/core'),
-      'react': path.resolve(__dirname, './node_modules/react'),
-      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-      'react-router-dom': path.resolve(__dirname, './node_modules/react-router-dom')
+      ...alias('@charlesstover/hsl2rgb'),
+      ...alias('@material-ui/core'),
+      ...alias('react'),
+      ...alias('react-multi-context'),
+      ...alias('react-object-prop'),
+      ...alias('react-router-dom')
     }
   }
 };
