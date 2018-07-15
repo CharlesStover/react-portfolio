@@ -24,7 +24,7 @@ module.exports = {
     'react-router-dom/Route',
     'react-router-dom/Switch'
   ],
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
