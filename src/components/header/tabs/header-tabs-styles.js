@@ -1,6 +1,6 @@
 export default (theme) => ({
-  root: {
-    display: 'flex'
+  flexContainer: {
+    flexGrow: 1
   },
   indicator: {
     backgroundColor: theme.palette.common.white
@@ -24,8 +24,11 @@ export default (theme) => ({
     justifyContent: 'center',
     textDecoration: 'none',
     '&:hover': {
-      color: theme.palette.primary.light
+      color: theme.palette.primary.main
     }
+  },
+  nav: {
+    display: 'flex'
   },
   scroller: {
     display: 'flex'
@@ -43,10 +46,7 @@ export default (theme) => ({
     alignSelf: 'stretch',
     display: 'flex'
   },
-  tabsFlexContainer: {
-    flexGrow: 1
-  },
-  tabWrapper: {
+  wrapper: {
     height: '100%',
     position: 'absolute'
   }

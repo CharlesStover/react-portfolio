@@ -18,10 +18,10 @@ class ReactPortfolio extends React.PureComponent {
 
   get contextProvider() {
     return contextProp({
-      app: this.props.app,
       copyright: this.props.copyright,
       footer: this.props.footer,
       nav: this.props.nav,
+      routes: this.props.routes,
       title: this.props.title
     });
   }

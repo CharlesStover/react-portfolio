@@ -3,5 +3,8 @@ export default (theme) => ({
     a: {
       color: theme.palette.primary.main
     }
+  },
+  main: {
+    flexGrow: 1
   }
 });
