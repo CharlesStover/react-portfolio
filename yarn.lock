@@ -3141,13 +3141,13 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-multi-context@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/react-multi-context/-/react-multi-context-1.0.6.tgz#c6ad390aa27489296035df6d196aac49d864f4f8"
+react-multi-context@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-multi-context/-/react-multi-context-1.0.7.tgz#545c8967dc6ffe1814f13f2765fd4f4ad56c7838"
 
-react-object-prop@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-object-prop/-/react-object-prop-1.0.0.tgz#0387a6aed54bf2545d3aeab9c018e32ff7344dcc"
+react-object-prop@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-object-prop/-/react-object-prop-1.0.3.tgz#fdda824ab74587fd41bc3b5a05a076518bb074e7"
 
 react-popper@^0.10.0:
   version "0.10.4"

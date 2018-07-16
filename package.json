@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@charlesstover/hsl2rgb": "^1.0.0",
-    "react-multi-context": "^1.0.6",
+    "react-multi-context": "^1.0.7",
     "react-object-prop": "^1.0.3"
   }
 }
