@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import withContext from 'react-multi-context/withContext';
 import Context from '../../context';
-import footerStyles from './footer-styles';
+import styles from './footer-styles';
 import Link from './link/footer-link';
 
 const defaultLinks = [
@@ -54,10 +54,7 @@ class Footer extends React.PureComponent {
   }
 
   get year() {
-    if (
-      !this.props.copyright ||
-      this.props.copyright === year
-    ) {
+    if (this.props.copyright === year) {
       return year;
     }
     return this.props.copyright + '-' + year;
@@ -79,4 +76,4 @@ class Footer extends React.PureComponent {
 
 const FooterContext = withContext(Context, [ 'copyright', 'footer' ])(Footer);
 
-export default withStyles(footerStyles)(FooterContext);
+export default withStyles(styles)(FooterContext);

@@ -1,7 +1,7 @@
 import withStyles from '@material-ui/core/styles/withStyles';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import headerTitleLinkStyles from './header-title-link-styles';
+import styles from './header-title-link-styles';
 
 class HeaderTitleLink extends React.PureComponent {
   render() {
@@ -15,4 +15,4 @@ class HeaderTitleLink extends React.PureComponent {
   }
 }
 
-export default withStyles(headerTitleLinkStyles)(HeaderTitleLink);
+export default withStyles(styles)(HeaderTitleLink);

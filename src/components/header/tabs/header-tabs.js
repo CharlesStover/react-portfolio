@@ -6,7 +6,7 @@ import withContext from 'react-multi-context/withContext';
 import createObjectProp from 'react-object-prop';
 import Link from 'react-router-dom/Link';
 import Context from '../../../context';
-import headerTabsStyles from './header-tabs-styles';
+import styles from './header-tabs-styles';
 
 const tabClasses = createObjectProp();
 const tabsClasses = createObjectProp();
@@ -86,4 +86,4 @@ class HeaderTabs extends React.PureComponent {
   }
 }
 
-export default withStyles(headerTabsStyles)(withContext(Context, [ 'nav', 'pathname' ])(HeaderTabs));
+export default withStyles(styles)(withContext(Context, [ 'nav', 'pathname' ])(HeaderTabs));
