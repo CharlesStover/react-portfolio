@@ -1,7 +1,7 @@
 import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import { withContext } from 'react-multi-context';
+import withContext from 'react-multi-context/withContext';
 import Context from '../../context';
 import footerStyles from './footer-styles';
 import Link from './link/footer-link';

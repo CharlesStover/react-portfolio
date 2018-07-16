@@ -2,7 +2,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import React from 'react';
-import { withContext } from 'react-multi-context';
+import withContext from 'react-multi-context/withContext';
 import createObjectProp from 'react-object-prop';
 import Link from 'react-router-dom/Link';
 import Context from '../../../context';

@@ -3141,9 +3141,9 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-multi-context@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/react-multi-context/-/react-multi-context-1.0.7.tgz#545c8967dc6ffe1814f13f2765fd4f4ad56c7838"
+react-multi-context@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/react-multi-context/-/react-multi-context-1.0.9.tgz#a36585ac3606bf49697721ce439abef9ec28dc55"
 
 react-object-prop@^1.0.3:
   version "1.0.3"

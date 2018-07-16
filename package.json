@@ -39,13 +39,13 @@
     "url": "git+https://github.com/CharlesStover/react-portfolio.git"
   },
   "scripts": {
-    "build": "webpack --display-modules",
-    "prepublish": "npm run build",
+    "build": "webpack",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@charlesstover/hsl2rgb": "^1.0.0",
-    "react-multi-context": "^1.0.7",
+    "react-multi-context": "^1.0.9",
     "react-object-prop": "^1.0.3"
   }
 }
