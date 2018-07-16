@@ -2,7 +2,7 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import hsl2rgb from '@charlesstover/hsl2rgb';
 
 const hl2rgb = (hue, lightness) =>
-  'rgb(' + hsl2rgb(hue, 1, lightness).join(', ') + ')';
+  'rgb(' + hsl2rgb(hue, 0.75, lightness).join(', ') + ')';
 
 export default (hue) => {
   const dark = hl2rgb(hue, 0.25);
