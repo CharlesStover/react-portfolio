@@ -27,14 +27,16 @@ class ReactPortfolio extends React.PureComponent {
   _themeProp = null;
 
   get contextProvider() {
-    return contextProp({
-      copyright: this.props.copyright,
-      footer: this.props.footer,
-      nav: this.props.nav,
-      routes: this.props.routes,
-      social: this.props.social,
-      title: this.props.title
-    });
+    const context = Object.create(null);
+    for (const key of [ 'copyright', 'footer', 'nav', 'routes', 'social', 'title' ]) {
+      if (Object.prototype.hasOwnProperty.call(this.props, key)) {
+        context[key] = this.props[key];
+      }
+      else {
+        context[key] = contextDefault[key];
+      }
+    }
+    return contextProp(context);
   }
 
   get theme() {
