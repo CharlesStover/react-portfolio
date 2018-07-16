@@ -1,6 +1,9 @@
 /.vscode
+/node_modules
 /src
 .babelrc
 .gitignore
+.npmignore
+package-lock.json
 webpack.config.js
 yarn.lock
