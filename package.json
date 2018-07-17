@@ -44,8 +44,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@charlesstover/hsl2rgb": "^1.0.0",
+    "@charlesstover/hsl2rgb": "^1.0.1",
     "react-multi-context": "^1.0.9",
-    "react-object-prop": "^1.0.3"
+    "react-object-prop": "^1.0.3",
+    "url-loader": "^1.0.1"
   }
 }

@@ -3,7 +3,6 @@ export default (theme) => ({
     flexGrow: 1
   },
   indicator: {
-    backgroundColor: theme.palette.common.white
   },
   label: {
     alignItems: 'stretch',
@@ -22,10 +21,7 @@ export default (theme) => ({
     display: 'flex',
     flexGrow: 1,
     justifyContent: 'center',
-    textDecoration: 'none',
-    '&:hover': {
-      color: theme.palette.primary.main
-    }
+    textDecoration: 'none'
   },
   nav: {
     display: 'flex'

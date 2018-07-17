@@ -1,13 +1,10 @@
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import hsl2rgb from '@charlesstover/hsl2rgb';
 
-const hl2rgb = (hue, lightness) =>
-  'rgb(' + hsl2rgb(hue, 0.75, lightness).join(', ') + ')';
+const hsl2css = (hue, saturation, lightness) =>
+  'rgb(' + hsl2rgb(hue, saturation, lightness).map((x) => Math.round(x * 255)).join(', ') + ')';
 
 export default (hue) => {
-  const dark = hl2rgb(hue, 0.25);
-  const light = hl2rgb(hue, 0.75);
-  const main = hl2rgb(hue, 0.5);
   return createMuiTheme({
     palette: {
       background: {
@@ -26,15 +23,15 @@ export default (hue) => {
       },
       primary: {
         contrastText: '#202020',
-        dark,
-        light,
-        main
+        dark: hsl2css(hue, 0.5, 0.25),
+        light: hsl2css(hue, 0.5, 0.75),
+        main: hsl2css(hue, 0.5, 0.5)
       },
       secondary: {
         contrastText: '#202020',
-        dark,
-        light,
-        main
+        dark: hsl2css(hue, 0.75, 0.25),
+        light: hsl2css(hue, 0.75, 0.75),
+        main: hsl2css(hue, 0.75, 0.5)
       },
       type: 'dark'
     }

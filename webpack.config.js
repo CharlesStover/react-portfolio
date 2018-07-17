@@ -32,6 +32,13 @@ module.exports = {
         use: [ 'style-loader', 'css-loader' ]
       },
       {
+        test: [ /\.(?:gif|ico|jpe?g|png)$/ ],
+        loader: require.resolve('url-loader'),
+        options: {
+          limit: 10000
+        }
+      },
+      {
         exclude: /^\/(?:build|node_modules)/,
         include: path.resolve(__dirname, 'src'),
         test: /\.js$/,

@@ -40,7 +40,7 @@ Public use cases will not be considered.
 * ### social: Social
 
   A Social object of networking accounts to display in the header.
-  A Social object has the properties `github`, `linkedIn`, `npmjs`, `reddit`, `stackOverflow`, and `twitter`.
+  A Social object has the properties `github`, `linkedIn`, `npmjs`, `reddit`, `stackOverflow`, `twitter`, and `youtube`.
 
 * ### title: string
 

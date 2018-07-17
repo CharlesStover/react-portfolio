@@ -28,13 +28,11 @@ class ReactPortfolio extends React.PureComponent {
 
   get contextProvider() {
     const context = Object.create(null);
-    for (const key of [ 'copyright', 'footer', 'nav', 'routes', 'social', 'title' ]) {
-      if (Object.prototype.hasOwnProperty.call(this.props, key)) {
-        context[key] = this.props[key];
-      }
-      else {
-        context[key] = contextDefault[key];
-      }
+    for (const key of Object.keys(contextDefault)) {
+      context[key] =
+        Object.prototype.hasOwnProperty.call(this.props, key) ?
+          this.props[key] :
+          contextDefault[key];
     }
     return contextProp(context);
   }

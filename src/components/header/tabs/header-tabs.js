@@ -71,6 +71,13 @@ class HeaderTabs extends React.PureComponent {
     });
   }
 
+  get value() {
+    if (this.props.nav.findIndex((nav) => nav.path === this.props.pathname) !== -1) {
+      return this.props.pathname;
+    }
+    return false;
+  }
+
   render() {
     return (
       <nav className={this.props.classes.nav}>
@@ -79,7 +86,7 @@ class HeaderTabs extends React.PureComponent {
           children={this.tabsChildren}
           classes={this.tabsClasses}
           fullWidth
-          value={this.props.pathname}
+          value={this.value}
         />
       </nav>
     );
