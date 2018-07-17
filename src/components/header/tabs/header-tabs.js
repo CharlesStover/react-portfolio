@@ -2,11 +2,11 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import React from 'react';
-import { withContext } from 'react-multi-context';
+import withContext from 'react-multi-context/withContext';
 import createObjectProp from 'react-object-prop';
 import Link from 'react-router-dom/Link';
 import Context from '../../../context';
-import headerTabsStyles from './header-tabs-styles';
+import styles from './header-tabs-styles';
 
 const tabClasses = createObjectProp();
 const tabsClasses = createObjectProp();
@@ -71,6 +71,13 @@ class HeaderTabs extends React.PureComponent {
     });
   }
 
+  get value() {
+    if (this.props.nav.findIndex((nav) => nav.path === this.props.pathname) !== -1) {
+      return this.props.pathname;
+    }
+    return false;
+  }
+
   render() {
     return (
       <nav className={this.props.classes.nav}>
@@ -79,11 +86,11 @@ class HeaderTabs extends React.PureComponent {
           children={this.tabsChildren}
           classes={this.tabsClasses}
           fullWidth
-          value={this.props.pathname}
+          value={this.value}
         />
       </nav>
     );
   }
 }
 
-export default withStyles(headerTabsStyles)(withContext(Context, [ 'nav', 'pathname' ])(HeaderTabs));
+export default withStyles(styles)(withContext(Context, [ 'nav', 'pathname' ])(HeaderTabs));

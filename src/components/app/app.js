@@ -6,7 +6,7 @@ import Switch from 'react-router-dom/Switch';
 import Context from '../../context';
 import Footer from '../footer/footer';
 import Header from '../header/header';
-import appStyles from './app-styles';
+import styles from './app-styles';
 
 const context = [ 'routes' ];
 
@@ -62,4 +62,4 @@ class App extends React.PureComponent {
   }
 }
 
-export default withStyles(appStyles)(App);
+export default withStyles(styles)(App);

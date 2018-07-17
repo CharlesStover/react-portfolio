@@ -8,7 +8,17 @@ import App from './components/app/app';
 import hue2theme from './constants/hue2theme';
 import Context from './context';
 
+const contextDefault = {
+  copyright: new Date().getFullYear(),
+  footer: [],
+  nav: [],
+  routes: [],
+  social: [],
+  title: ''
+};
+
 const contextProp = createObjectProp();
+
 const themeProp = createObjectProp();
 
 class ReactPortfolio extends React.PureComponent {
@@ -17,13 +27,14 @@ class ReactPortfolio extends React.PureComponent {
   _themeProp = null;
 
   get contextProvider() {
-    return contextProp({
-      copyright: this.props.copyright,
-      footer: this.props.footer,
-      nav: this.props.nav,
-      routes: this.props.routes,
-      title: this.props.title
-    });
+    const context = Object.create(null);
+    for (const key of Object.keys(contextDefault)) {
+      context[key] =
+        Object.prototype.hasOwnProperty.call(this.props, key) ?
+          this.props[key] :
+          contextDefault[key];
+    }
+    return contextProp(context);
   }
 
   get theme() {
@@ -38,7 +49,10 @@ class ReactPortfolio extends React.PureComponent {
     return (
       <MuiThemeProvider theme={this.theme}>
         <CssBaseline />
-        <Context set={this.contextProvider}>
+        <Context
+          default={contextDefault}
+          set={this.contextProvider}
+        >
           <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Route component={App} />
           </BrowserRouter>

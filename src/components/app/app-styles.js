@@ -1,7 +1,7 @@
 export default (theme) => ({
   '@global': {
     a: {
-      color: theme.palette.primary.main
+      color: theme.palette.secondary.light
     }
   },
   main: {
