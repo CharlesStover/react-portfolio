@@ -1,9 +1,8 @@
 /.vscode
 /node_modules
 /src
-.babelrc
-.gitignore
-.npmignore
-package-lock.json
-webpack.config.js
-yarn.lock
+/.babelrc
+/.gitignore
+/.npmignore
+/.travis.yml
+/webpack.config.js

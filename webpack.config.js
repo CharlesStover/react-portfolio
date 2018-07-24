@@ -39,7 +39,6 @@ module.exports = {
         }
       },
       {
-        exclude: /^\/(?:build|node_modules)/,
         include: path.resolve(__dirname, 'src'),
         test: /\.js$/,
         use: {
@@ -49,10 +48,10 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'react-portfolio.js',
+    filename: 'index.js',
     library: 'react-portfolio',
     libraryTarget: 'umd',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, '.'),
     umdNamedDefine: true
   },
   resolve: {

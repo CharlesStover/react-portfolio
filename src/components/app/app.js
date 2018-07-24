@@ -10,8 +10,6 @@ import styles from './app-styles';
 
 const context = [ 'routes' ];
 
-const contextProp = createObjectProp();
-
 const mapRoutesToSwitch = (props) =>
   <Route
     exact
@@ -26,6 +24,7 @@ class App extends React.PureComponent {
     super(props);
     this._routes = null;
     this._switch = null;
+    this.contextProp = createObjectProp();
     this.contextConsumer = this.contextConsumer.bind(this);
   }
 
@@ -41,7 +40,7 @@ class App extends React.PureComponent {
     return (
       <React.Fragment>
         <Context
-          set={contextProp({
+          set={this.contextProp({
             pathname: this.props.location.pathname
           })}
         >

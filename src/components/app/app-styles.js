@@ -5,6 +5,10 @@ export default (theme) => ({
     }
   },
   main: {
-    flexGrow: 1
+    flexGrow: 1,
+
+    // Optimal reading width: 66 characters per line
+    maxWidth: '66rem',
+    width: '100%'
   }
 });

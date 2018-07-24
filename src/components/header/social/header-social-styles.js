@@ -1,8 +1,7 @@
 export default (theme) => ({
   root: {
     alignItems: 'center',
-    // backgroundColor: theme.palette.secondary.dark.replace(/^rgb/, 'rgba').replace(/\)$/, ', 0.1)'),
-    // backgroundImage: 'linear-gradient(transparent, ' + theme.palette.common.black + ')',
+    alignSelf: 'stretch',
     borderBottomColor: theme.palette.secondary.main,
     borderBottomStyle: 'solid',
     borderBottomWidth: 2,
