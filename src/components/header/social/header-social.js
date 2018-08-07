@@ -2,26 +2,9 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import withContext from 'react-multi-context/withContext';
-import youtube from '../../../assets/icons/youtube.ico';
 import Context from '../../../context';
 import styles from './header-social-styles';
-
-const linkProps = (medium, value) => {
-  switch (medium) {
-    case 'github':
-      return {
-      };
-    case 'youtube':
-      return {
-        alt: 'YouTube',
-        href: 'https://www.youtube.com/user/' + value,
-        src: youtube,
-        title: 'YouTube'
-      };
-    default:
-      return null;
-  }
-};
+import linkProps from './link-props';
 
 class HeaderSocial extends React.PureComponent {
 
@@ -73,4 +56,4 @@ class HeaderSocial extends React.PureComponent {
   }
 }
 
-export default withStyles(styles)(withContext(Context, [ 'social' ])(HeaderSocial));
+export default withContext(Context, [ 'social' ])(withStyles(styles)(HeaderSocial));

@@ -17,6 +17,41 @@ Public use cases will not be considered.
 * `npm install react-portfolio --save` or
 * `yarn add react-portfolio`
 
+## Use
+
+### Client-Side Rendering
+```JS
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactPortfolio from 'react-portfolio';
+ReactDOM.render(
+  <ReactPortfolio
+    copyright={2008}
+    footer={[]}
+    hue={0}
+    nav={[]}
+    routes={[]}
+    social={{}}
+    title="My React Portfolio"
+  />,
+  document.getElementById('root')
+);
+```
+
+### Server-Side Rendering
+```JS
+import reactPortfolioServer from 'react-portfolio/server';
+reactPortfolioServer({
+  copyright: 2008,
+  footer: [],
+  hue: 0,
+  nav: [],
+  routes: [],
+  social: {},
+  title: 'My React Portfolio'
+});
+```
+
 ## Props
 * ### copyright: number
 
@@ -26,6 +61,12 @@ Public use cases will not be considered.
 * ### footer: AnchorProps[]
 
   An array of `<a>` props to include in the footer.
+
+* ### hue: number
+
+  A number from 0 to 1, representing the hue of your portfolio's accent color.
+
+  `0` represents red, `1/3` represents green, `2/3` represents blue.
 
 * ### nav: Nav[]
 

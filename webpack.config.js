@@ -5,7 +5,10 @@ const alias = (pkg) => ({
 });
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    server: './src/server.js'
+  },
   externals: [
     {
       react: {
@@ -17,6 +20,7 @@ module.exports = {
     },
     /^\@material\-ui\/core\/.*/,
     '@charlesstover/hsl2rgb',
+    'react-dom',
     'react-multi-context',
     'react-object-prop',
     'react-router-dom',
@@ -48,7 +52,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'index.js',
+    filename: '[name].js',
     library: 'react-portfolio',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, '.'),
@@ -59,6 +63,7 @@ module.exports = {
       ...alias('@charlesstover/hsl2rgb'),
       ...alias('@material-ui/core'),
       ...alias('react'),
+      ...alias('react-dom'),
       ...alias('react-multi-context'),
       ...alias('react-object-prop'),
       ...alias('react-router-dom')

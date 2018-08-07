@@ -1,4 +1,9 @@
-export default (theme) => ({
+const SIZE = 16;
+const FOCUS_SIZE = 32;
+
+const FOCUS_MARGIN = (FOCUS_SIZE - SIZE) / -2;
+
+export default theme => ({
   root: {
     alignItems: 'center',
     alignSelf: 'stretch',
@@ -12,17 +17,28 @@ export default (theme) => ({
     justifyContent: 'center'
   },
   image: {
-    filter: 'saturate(0%) brightness(225%)'
+    filter: 'saturate(0%)',
+    height: SIZE,
+    transitionDuration: '0.5s',
+    transitionProperty: 'filter, height, margin, width',
+    transitionTimingFunction: 'ease',
+    width: SIZE
   },
   link: {
     display: 'inline-flex',
-    height: 16,
+    height: SIZE,
     marginLeft: theme.spacing.unit,
-    width: 16
+    width: SIZE,
+    '&:focus > $image, &:hover > $image': {
+      filter: 'saturate(100%)',
+      height: FOCUS_SIZE,
+      margin: FOCUS_MARGIN,
+      width: FOCUS_SIZE
+    }
   },
   message: {
     alignItems: 'flex-end',
     display: 'inline-flex',
-    height: 16
+    height: SIZE
   }
 });

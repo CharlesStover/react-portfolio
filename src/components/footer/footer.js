@@ -1,5 +1,6 @@
 import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
+import delimiter from 'delimiter';
 import React from 'react';
 import withContext from 'react-multi-context/withContext';
 import Context from '../../context';
@@ -13,21 +14,6 @@ const defaultLinks = [
     title: 'CharlesStover.com'
   }
 ];
-
-const linksReducer = (accumulator, current, index, links) => {
-  accumulator.push(current);
-  const linksLength = links.length;
-  if (index < linksLength - 1) {
-    accumulator.push(
-      index === linksLength - 2 ?
-        linksLength === 2 ?
-          ' and ' :
-          ', and ' :
-        ', '
-    );
-  }
-  return accumulator;
-};
 
 const mapPropsToLinks = (props) =>
   <Link
@@ -50,7 +36,7 @@ class Footer extends React.PureComponent {
     const props = this.props.footer.concat(defaultLinks);
     props.sort(propsSorts);
     const links = props.map(mapPropsToLinks);
-    return links.reduce(linksReducer, []);
+    return delimiter(links);
   }
 
   get year() {
@@ -74,6 +60,4 @@ class Footer extends React.PureComponent {
   }
 }
 
-const FooterContext = withContext(Context, [ 'copyright', 'footer' ])(Footer);
-
-export default withStyles(styles)(FooterContext);
+export default withContext(Context, [ 'copyright', 'footer' ])(withStyles(styles)(Footer));

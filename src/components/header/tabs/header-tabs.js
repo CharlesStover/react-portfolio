@@ -1,53 +1,50 @@
 import withStyles from '@material-ui/core/styles/withStyles';
-import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import React from 'react';
+import { findDOMNode } from 'react-dom';
 import withContext from 'react-multi-context/withContext';
 import createObjectProp from 'react-object-prop';
-import Link from 'react-router-dom/Link';
 import Context from '../../../context';
+import Tab from '../tab/header-tab';
 import styles from './header-tabs-styles';
 
-const tabClasses = createObjectProp();
-const tabsClasses = createObjectProp();
+const mapNavToTabs = (props, tabIndex) =>
+  <Tab
+    tabIndex={tabIndex}
+    title={props.title}
+    value={props.path}
+  />;
 
 class HeaderTabs extends React.PureComponent {
 
-  constructor(props) {
-    super(props);
-    this._nav = null;
-    this._pathname = '/';
-    this._tabsChildren = null;
-    this.mapNavToTabs = this.mapNavToTabs.bind(this);
+  _nav = null;
+  _pathname = '/';
+  _previousMousePosition = null;
+  _ref = null;
+  _tabsChildren = null;
+  _tabsClasses = createObjectProp();
+
+  handleMouseDown = e => {
+    e.preventDefault();
+    this._previousMousePosition = e.pageX;
   }
 
-  mapNavToTabs(props, tabIndex) {
-    return (
-      <Tab
-        classes={this.tabClasses}
-        disabled={props.path === this.props.pathname}
-        label={
-          <Link
-            className={this.props.classes.link}
-            to={props.path}
-          >
-            <span children={props.title} />
-          </Link>
-        }
-        tabIndex={tabIndex}
-        value={props.path}
-      />
-    );
+  handleMouseMove = e => {
+    e.preventDefault();
+    if (this._previousMousePosition !== null) {
+      this._ref.scrollLeft += this._previousMousePosition - e.pageX;
+      this._previousMousePosition = e.pageX;
+    }
   }
 
-  get tabClasses() {
-    return tabClasses({
-      label: this.props.classes.label,
-      labelContainer: this.props.classes.labelContainer,
-      root: this.props.classes.tab,
-      selected: this.props.classes.selected,
-      wrapper: this.props.classes.wrapper
-    });
+  handleMouseUp = e => {
+    e.preventDefault();
+    this._previousMousePosition = null;
+  }
+
+  handleRef = ref => {
+    this._ref = findDOMNode(ref);
+    this._ref.scrollLeft = 80;
   }
 
   get tabsChildren() {
@@ -57,15 +54,14 @@ class HeaderTabs extends React.PureComponent {
     ) {
       this._nav = this.props.nav;
       this._pathname = this.props.pathname;
-      this._tabsChildren = this.props.nav.map(this.mapNavToTabs);
+      this._tabsChildren = this.props.nav.map(mapNavToTabs);
     }
     return this._tabsChildren;
   }
 
   get tabsClasses() {
-    return tabsClasses({
+    return this._tabsClasses({
       flexContainer: this.props.classes.flexContainer,
-      indicator: this.props.classes.indicator,
       root: this.props.classes.tabs,
       scroller: this.props.classes.scroller
     });
@@ -82,10 +78,13 @@ class HeaderTabs extends React.PureComponent {
     return (
       <nav className={this.props.classes.nav}>
         <Tabs
-          centered
           children={this.tabsChildren}
           classes={this.tabsClasses}
           fullWidth
+          onMouseDown={this.handleMouseDown}
+          onMouseMove={this.handleMouseMove}
+          onMouseUp={this.handleMouseUp}
+          ref={this.handleRef}
           value={this.value}
         />
       </nav>
@@ -93,4 +92,4 @@ class HeaderTabs extends React.PureComponent {
   }
 }
 
-export default withStyles(styles)(withContext(Context, [ 'nav', 'pathname' ])(HeaderTabs));
+export default withContext(Context, [ 'nav', 'pathname' ])(withStyles(styles)(HeaderTabs));
