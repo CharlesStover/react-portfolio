@@ -1,20 +1,8 @@
-import { mobileMediaQuery } from '../../constants/breakpoints';
+import withStyles from '@material-ui/core/styles/withStyles';
 
-export default (theme) => ({
+export default withStyles(theme => ({
   appBar: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white
-  },
-  toolbar: {
-    alignItems: 'stretch',
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    padding: 0
-  },
-  [mobileMediaQuery]: {
-    toolbar: {
-      flexDirection: 'column'
-    }
+    backgroundColor: '#202020',
+    color: '#F0F0F0'
   }
-});
+}));

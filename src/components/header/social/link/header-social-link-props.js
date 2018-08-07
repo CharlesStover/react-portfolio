@@ -1,12 +1,12 @@
-import github from '../../../assets/icons/github.png';
-import linkedin from '../../../assets/icons/linkedin.png';
-import medium from '../../../assets/icons/medium.png';
-import npmjs from '../../../assets/icons/npmjs.png';
-import reddit from '../../../assets/icons/reddit.png';
-import skype from '../../../assets/icons/skype.png';
-import stackoverflow from '../../../assets/icons/stackoverflow.png';
-import twitter from '../../../assets/icons/twitter.png';
-import youtube from '../../../assets/icons/youtube.png';
+import github from '../../../../assets/icons/github.png';
+import linkedin from '../../../../assets/icons/linkedin.png';
+import medium from '../../../../assets/icons/medium.png';
+import npmjs from '../../../../assets/icons/npmjs.png';
+import reddit from '../../../../assets/icons/reddit.png';
+import skype from '../../../../assets/icons/skype.png';
+import stackoverflow from '../../../../assets/icons/stackoverflow.png';
+import twitter from '../../../../assets/icons/twitter.png';
+import youtube from '../../../../assets/icons/youtube.png';
 
 const linkProps = (website, value) => {
   switch (website) {

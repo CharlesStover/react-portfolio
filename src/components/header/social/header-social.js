@@ -1,36 +1,21 @@
-import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import withContext from 'react-multi-context/withContext';
 import Context from '../../../context';
-import styles from './header-social-styles';
-import linkProps from './link-props';
+import withStyles from './header-social-styles';
+import Link from './link/header-social-link';
 
 class HeaderSocial extends React.PureComponent {
 
   get links() {
-    return Object.entries(this.props.social).map(([ medium, value ]) => {
-      const props = linkProps(medium, value);
-      if (props === null) {
-        return null;
-      }
-      return (
-        <a
-          className={this.props.classes.link}
-          href={props.href}
+    return Object.entries(this.props.social).map(
+      ([ medium, value ]) =>
+        <Link
           key={medium}
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          title={props.title}
-        >
-          <img
-            alt={props.alt}
-            className={this.props.classes.image}
-            src={props.src}
-          />
-        </a>
-      );
-    });
+          medium={medium}
+          value={value}
+        />
+    );
   }
 
   render() {
@@ -46,14 +31,11 @@ class HeaderSocial extends React.PureComponent {
         className={this.props.classes.root}
         variant="caption"
       >
-        <span
-          children="Connect with me."
-          className={this.props.classes.message}
-        />
+        <span children="Connect with me." />
         {this.links}
       </Typography>
     );
   }
 }
 
-export default withContext(Context, [ 'social' ])(withStyles(styles)(HeaderSocial));
+export default withContext(Context, [ 'social' ])(withStyles(HeaderSocial));

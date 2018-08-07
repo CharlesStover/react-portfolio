@@ -1,40 +1,14 @@
-import withStyles from '@material-ui/core/styles/withStyles';
 import React from 'react';
 import createObjectProp from 'react-object-prop';
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
 import Context from '../../context';
 import Footer from '../footer/footer';
 import Header from '../header/header';
-import styles from './app-styles';
-
-const context = [ 'routes' ];
-
-const mapRoutesToSwitch = (props) =>
-  <Route
-    exact
-    sensitive
-    strict
-    {...props}
-  />;
+import Main from '../main/main';
+import withStyles from './app-styles';
 
 class App extends React.PureComponent {
 
-  constructor(props) {
-    super(props);
-    this._routes = null;
-    this._switch = null;
-    this.contextProp = createObjectProp();
-    this.contextConsumer = this.contextConsumer.bind(this);
-  }
-
-  contextConsumer(routes) {
-    if (routes !== this._routes) {
-      this._routes = routes;
-      this._switch = routes.map(mapRoutesToSwitch);
-    }
-    return <Switch children={this._switch} />;
-  }
+  contextProp = createObjectProp();
 
   render() {
     return (
@@ -46,19 +20,11 @@ class App extends React.PureComponent {
         >
           <Header />
         </Context>
-        <main className={this.props.classes.main}>
-          <Context
-            children={this.contextConsumer}
-            get={context}
-            history={this.props.history}
-            location={this.props.location}
-            match={this.props.match}
-          />
-        </main>
+        <Main />
         <Footer />
       </React.Fragment>
     );
   }
 }
 
-export default withStyles(styles)(App);
+export default withStyles(App);

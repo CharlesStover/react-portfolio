@@ -1,4 +1,3 @@
-import withStyles from '@material-ui/core/styles/withStyles';
 import Tabs from '@material-ui/core/Tabs';
 import React from 'react';
 import { findDOMNode } from 'react-dom';
@@ -6,7 +5,7 @@ import withContext from 'react-multi-context/withContext';
 import createObjectProp from 'react-object-prop';
 import Context from '../../../context';
 import Tab from '../tab/header-tab';
-import styles from './header-tabs-styles';
+import withStyles from './header-tabs-styles';
 
 const mapNavToTabs = (props, tabIndex) =>
   <Tab
@@ -92,4 +91,4 @@ class HeaderTabs extends React.PureComponent {
   }
 }
 
-export default withContext(Context, [ 'nav', 'pathname' ])(withStyles(styles)(HeaderTabs));
+export default withContext(Context, [ 'nav', 'pathname' ])(withStyles(HeaderTabs));

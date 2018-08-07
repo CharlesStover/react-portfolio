@@ -2,6 +2,9 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 export default withStyles({
   root: {
-    color: '#F0F0F0'
-  },
+    alignItems: 'flex-end',
+    display: 'inline-flex',
+    fontSize: '0.75rem',
+    height: '1em'
+  }
 });

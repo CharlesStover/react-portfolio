@@ -1,4 +1,6 @@
-export default theme => ({
+import withStyles from '@material-ui/core/styles/withStyles';
+
+export default withStyles({
   root: {
     display: 'flex',
     height: '100%',
@@ -18,7 +20,7 @@ export default theme => ({
   },
   link: {
     alignItems: 'center',
-    color: theme.palette.common.white,
+    color: '#F0F0F0',
     display: 'flex',
     flexGrow: 1,
     justifyContent: 'center',

@@ -1,8 +1,7 @@
 import Typography from '@material-ui/core/Typography';
-import withStyles from '@material-ui/core/styles/withStyles';
 import React from 'react';
 import Context from '../../../context';
-import styles from './header-title-styles';
+import withStyles from './header-title-styles';
 import Link from './link/header-title-link';
 
 const context = [ 'title' ];
@@ -26,4 +25,4 @@ class HeaderTitle extends React.PureComponent {
   }
 }
 
-export default withStyles(styles)(HeaderTitle);
+export default withStyles(HeaderTitle);

@@ -1,6 +1,5 @@
-import withStyles from '@material-ui/core/styles/withStyles';
 import React from 'react';
-import styles from './footer-link-styles';
+import withStyles from './footer-link-styles';
 
 class FooterLink extends React.PureComponent {
   render() {
@@ -17,4 +16,4 @@ class FooterLink extends React.PureComponent {
   }
 }
 
-export default withStyles(styles)(FooterLink);
+export default withStyles(FooterLink);
