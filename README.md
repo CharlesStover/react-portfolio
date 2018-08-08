@@ -4,11 +4,11 @@ A sleek portfolio design created in React.
 This project is open-source but is not meant for public use.
 Public use cases will not be considered.
 
-![GitHub version](https://img.shields.io/github/package-json/v/CharlesStover/react-portfolio.svg)
-![npm version](https://img.shields.io/npm/v/react-portfolio.svg)
-![npm downloads](https://img.shields.io/npm/dt/react-portfolio.svg)
-![min](https://img.shields.io/bundlephobia/min/react-portfolio.svg)
-![minzip](https://img.shields.io/bundlephobia/minzip/react-portfolio.svg)
+[![package](https://img.shields.io/github/package-json/v/CharlesStover/react-portfolio.svg)](https://github.com/CharlesStover/react-portfolio/)
+[![build](https://travis-ci.com/CharlesStover/react-object-prop.svg)](https://travis-ci.com/CharlesStover/react-portfolio)
+[![npm downloads](https://img.shields.io/npm/dt/react-portfolio.svg)](https://www.npmjs.com/package/react-portfolio)
+[![min](https://img.shields.io/bundlephobia/min/react-portfolio.svg)](https://www.npmjs.com/package/react-portfolio)
+[![minzip](https://img.shields.io/bundlephobia/minzip/react-portfolio.svg)](https://www.npmjs.com/package/react-portfolio)
 
 ## Build
 `npm run build`
