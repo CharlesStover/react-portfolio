@@ -8,7 +8,6 @@ export default withStyles(theme => ({
     borderBottomColor: theme.palette.secondary.main,
     borderBottomStyle: 'solid',
     borderBottomWidth: 2,
-    color: '#F0F0F0',
     display: 'flex',
     flexDirection: 'row',
     height: THEME_SPACING_UNIT * 5,
