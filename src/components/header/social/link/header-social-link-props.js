@@ -54,7 +54,7 @@ const linkProps = (website, value) => {
     case 'skype':
       return {
         alt: 'Skype',
-        href: 'skype:' + value,
+        href: 'skype:' + value + '?chat',
         src: skype,
         title: 'Skype'
       };
