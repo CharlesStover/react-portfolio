@@ -31,17 +31,17 @@ class HeaderTab extends React.PureComponent {
   }
 
   render() {
-    const props = {...this.props};
-    delete props.pathname;
     return (
       <Tab
-        {...props}
         classes={this.tabClasses}
         disabled={this.props.value === this.props.pathname}
         label={this.label}
+        tabIndex={this.props.tabIndex}
+        title={this.props.title}
+        value={this.props.value}
       />
     );
   }
 }
 
-export default Context.with('pathname')(withStyles(HeaderTab));
+export default withStyles(Context.with('pathname')(HeaderTab));

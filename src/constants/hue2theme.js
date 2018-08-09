@@ -4,8 +4,8 @@ import hsl2rgb from '@charlesstover/hsl2rgb';
 const hsl2css = (hue, saturation, lightness) =>
   'rgb(' + hsl2rgb(hue, saturation, lightness).map((x) => Math.round(x * 255)).join(', ') + ')';
 
-export default (hue) => {
-  return createMuiTheme({
+export default hue =>
+  createMuiTheme({
     palette: {
       background: {
         default: '#202020',
@@ -36,4 +36,3 @@ export default (hue) => {
       type: 'dark'
     }
   });
-};

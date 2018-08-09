@@ -8,21 +8,21 @@ import withStyles from './app-styles';
 
 class App extends React.PureComponent {
 
-  contextProp = createObjectProp();
+  contextSetProp = createObjectProp();
+
+  get contextSet() {
+    return this.contextSetProp({
+      pathname: this.props.location.pathname
+    });
+  }
 
   render() {
     return (
-      <React.Fragment>
-        <Context
-          set={this.contextProp({
-            pathname: this.props.location.pathname
-          })}
-        >
-          <Header />
-        </Context>
+      <Context set={this.contextSet}>
+        <Header />
         <Main />
         <Footer />
-      </React.Fragment>
+      </Context>
     );
   }
 }
