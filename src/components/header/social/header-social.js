@@ -1,6 +1,5 @@
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import withContext from 'react-multi-context/withContext';
 import Context from '../../../context';
 import withStyles from './header-social-styles';
 import Link from './link/header-social-link';
@@ -38,4 +37,4 @@ class HeaderSocial extends React.PureComponent {
   }
 }
 
-export default withContext(Context, [ 'social' ])(withStyles(HeaderSocial));
+export default Context.with('social')(withStyles(HeaderSocial));

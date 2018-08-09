@@ -8,39 +8,17 @@ import App from './components/app/app';
 import hue2theme from './constants/hue2theme';
 import Context from './context';
 
-const contextDefault = {
-  copyright: new Date().getFullYear(),
-  footer: [],
-  nav: [],
-  routes: [],
-  social: [],
-  title: ''
-};
-
-const contextProp = createObjectProp();
-
-const themeProp = createObjectProp();
-
 class ReactPortfolio extends React.PureComponent {
 
   _themeHue = null;
   _themeProp = null;
-
-  get contextProvider() {
-    const context = Object.create(null);
-    for (const key of Object.keys(contextDefault)) {
-      context[key] =
-        Object.prototype.hasOwnProperty.call(this.props, key) ?
-          this.props[key] :
-          contextDefault[key];
-    }
-    return contextProp(context);
-  }
+  contextSetProp = createObjectProp();
+  themeProp = createObjectProp();
 
   get theme() {
     if (this._themeHue !== this.props.hue) {
       this._themeHue = this.props.hue;
-      this._themeProp = themeProp(hue2theme(this.props.hue));
+      this._themeProp = this.themeProp(hue2theme(this.props.hue));
     }
     return this._themeProp;
   }
@@ -49,10 +27,7 @@ class ReactPortfolio extends React.PureComponent {
     return (
       <MuiThemeProvider theme={this.theme}>
         <CssBaseline />
-        <Context
-          default={contextDefault}
-          set={this.contextProvider}
-        >
+        <Context set={this.contextSetProp(this.props)}>
           <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Route component={App} />
           </BrowserRouter>

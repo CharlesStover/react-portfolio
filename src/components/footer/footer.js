@@ -1,7 +1,6 @@
 import Typography from '@material-ui/core/Typography';
 import delimiter from 'delimiter';
 import React from 'react';
-import withContext from 'react-multi-context/withContext';
 import Context from '../../context';
 import withStyles from './footer-styles';
 import Link from './link/footer-link';
@@ -59,4 +58,4 @@ class Footer extends React.PureComponent {
   }
 }
 
-export default withContext(Context, [ 'copyright', 'footer' ])(withStyles(Footer));
+export default Context.with('copyright', 'footer')(withStyles(Footer));

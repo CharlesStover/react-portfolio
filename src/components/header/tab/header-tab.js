@@ -1,6 +1,5 @@
 import Tab from '@material-ui/core/Tab';
 import React from 'react';
-import withContext from 'react-multi-context/withContext';
 import createObjectProp from 'react-object-prop';
 import Link from 'react-router-dom/Link';
 import Context from '../../../context';
@@ -45,4 +44,4 @@ class HeaderTab extends React.PureComponent {
   }
 }
 
-export default withContext(Context, [ 'pathname' ])(withStyles(HeaderTab));
+export default Context.with('pathname')(withStyles(HeaderTab));
