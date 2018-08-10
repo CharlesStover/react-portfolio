@@ -28,6 +28,7 @@ class HeaderSocial extends React.PureComponent {
     return (
       <Typography
         className={this.props.classes.root}
+        role="navigation"
         variant="caption"
       >
         <span children="Connect with me." />

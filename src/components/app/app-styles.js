@@ -7,6 +7,9 @@ export default withStyles(theme => ({
     },
     body: {
       color: theme.palette.common.white
+    },
+    '#root': {
+      backgroundColor: theme.palette.common.black
     }
   }
 }));

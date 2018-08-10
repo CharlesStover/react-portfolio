@@ -30,13 +30,20 @@ class HeaderTab extends React.PureComponent {
     });
   }
 
+  get tabIndex() {
+    if (this.props.tabIndex > 0) {
+      return 0;
+    }
+    return this.props.tabIndex;
+  }
+
   render() {
     return (
       <Tab
         classes={this.tabClasses}
         disabled={this.props.value === this.props.pathname}
         label={this.label}
-        tabIndex={this.props.tabIndex}
+        tabIndex={this.tabIndex}
         title={this.props.title}
         value={this.props.value}
       />
