@@ -9,6 +9,7 @@
     "@charlesstover/hsl2rgb": "^1.0.4",
     "delimiter": "^1.0.0",
     "memoize-one": "^4.0.0",
+    "react-helmet": "^5.2.0",
     "react-multi-context": "^1.1.1",
     "react-object-prop": "^1.0.5"
   },
