@@ -1,4 +1,4 @@
-import Tabs from '@material-ui/core/Tabs';
+import { Tabs } from '@material-ui/core';
 import memoizeOne from 'memoize-one';
 import React from 'react';
 import { findDOMNode } from 'react-dom';

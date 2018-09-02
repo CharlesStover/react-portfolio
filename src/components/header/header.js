@@ -1,4 +1,4 @@
-import AppBar from '@material-ui/core/AppBar';
+import { AppBar } from '@material-ui/core';
 import React from 'react';
 import withStyles from './header-styles';
 import Social from './social/header-social';

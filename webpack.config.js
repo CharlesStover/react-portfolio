@@ -18,8 +18,8 @@ module.exports = {
         root: 'React'
       }
     },
-    /^\@material\-ui\/core\/.*/,
     '@charlesstover/hsl2rgb',
+    '@material-ui/core',
     'react-dom',
     'react-multi-context',
     'react-object-prop',

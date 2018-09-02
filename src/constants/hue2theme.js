@@ -1,5 +1,5 @@
-import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import hsl2rgb from '@charlesstover/hsl2rgb';
+import { createMuiTheme } from '@material-ui/core';
 
 const hsl2css = (hue, saturation, lightness) =>
   'rgb(' + hsl2rgb(hue, saturation, lightness).map((x) => Math.round(x * 255)).join(', ') + ')';

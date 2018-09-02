@@ -1,4 +1,4 @@
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles } from '@material-ui/core';
 import { MOBILE_MEDIA_QUERY } from '../../../constants/styles';
 
 export default withStyles({

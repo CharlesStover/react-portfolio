@@ -1,4 +1,4 @@
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles } from '@material-ui/core';
 import { THEME_SPACING_UNIT } from '../../../../constants/styles';
 
 const SIZE = 16;

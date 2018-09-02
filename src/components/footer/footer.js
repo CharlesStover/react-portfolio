@@ -1,4 +1,4 @@
-import Typography from '@material-ui/core/Typography';
+import { Typography } from '@material-ui/core';
 import delimiter from 'delimiter';
 import React from 'react';
 import Context from '../../context';

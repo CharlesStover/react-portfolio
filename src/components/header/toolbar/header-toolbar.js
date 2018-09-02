@@ -1,4 +1,4 @@
-import Toolbar from '@material-ui/core/Toolbar';
+import { Toolbar } from '@material-ui/core';
 import React from 'react';
 import Tabs from '../tabs/header-tabs';
 import Title from '../title/header-title';
