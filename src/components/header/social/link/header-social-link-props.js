@@ -22,7 +22,7 @@ const linkProps = (website, value) => {
     case 'linkedin':
       return {
         alt: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/' + value,
+        href: 'https://www.linkedin.com/in/' + value + '/',
         src: linkedin,
         title: 'LinkedIn'
       };
