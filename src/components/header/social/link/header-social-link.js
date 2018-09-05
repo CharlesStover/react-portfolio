@@ -19,7 +19,6 @@ class HeaderSocialLink extends React.PureComponent {
           key={props.medium}
           rel="nofollow noopener noreferrer"
           target="_blank"
-          title={props.title}
         >
           <img
             alt={props.alt}
