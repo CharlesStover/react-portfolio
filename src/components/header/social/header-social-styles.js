@@ -5,6 +5,7 @@ export default withStyles(theme => ({
   root: {
     alignItems: 'center',
     alignSelf: 'stretch',
+    backgroundColor: 'inherit',
     borderBottomColor: theme.palette.secondary.main,
     borderBottomStyle: 'solid',
     borderBottomWidth: 2,

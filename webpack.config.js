@@ -37,10 +37,7 @@ module.exports = {
       },
       {
         test: [ /\.(?:gif|ico|jpe?g|png)$/ ],
-        loader: require.resolve('url-loader'),
-        options: {
-          limit: 10000
-        }
+        loader: require.resolve('url-loader')
       },
       {
         include: path.resolve(__dirname, 'src'),
