@@ -22,10 +22,12 @@ class HeaderTab extends React.PureComponent {
 
   get tabClasses() {
     return this._tabClasses({
+      disabled: this.props.classes.disabled,
       label: this.props.classes.label,
       labelContainer: this.props.classes.labelContainer,
       root: this.props.classes.root,
       selected: this.props.classes.selected,
+      textColorInherit: this.props.classes.textColorInherit,
       wrapper: this.props.classes.wrapper
     });
   }

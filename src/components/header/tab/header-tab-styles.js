@@ -7,6 +7,7 @@ export default withStyles({
     minWidth: 120,
     opacity: 0.658
   },
+  disabled: {},
   label: {
     alignItems: 'stretch',
     display: 'flex',
@@ -28,6 +29,11 @@ export default withStyles({
   },
   selected: {
     opacity: '1 !important'
+  },
+  textColorInherit: {
+    '&$disabled': {
+      opacity: 0.658
+    }
   },
   wrapper: {
     height: '100%',
