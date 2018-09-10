@@ -11,7 +11,8 @@ export default withStyles(theme => ({
     borderBottomWidth: 2,
     display: 'flex',
     flexDirection: 'row',
-    height: THEME_SPACING_UNIT * 5,
-    justifyContent: 'center'
+    fontSize: '1em',
+    justifyContent: 'center',
+    lineHeight: '48px'
   }
 }));

@@ -63,6 +63,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "dev": "set NODE_ENV=development && webpack",
     "prepublishOnly": "npm run build",
     "test": "jest tests/.+.spec.js"
   }

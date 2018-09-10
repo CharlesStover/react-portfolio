@@ -1,8 +1,7 @@
 import memoizeOne from 'memoize-one';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
+import { Route, Switch } from 'react-router-dom';
 import Context from '../../context';
 import withStyles from './main-styles';
 

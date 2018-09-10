@@ -31,12 +31,7 @@ class HeaderSocialLink extends React.PureComponent {
           style={style}
           target="_blank"
         >
-          <span
-            className={this.props.classes.color}
-            style={style}
-          >
-            <span children={props.title} />
-          </span>
+          <span children={props.title} />
         </a>
       </Tooltip>
     );

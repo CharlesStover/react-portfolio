@@ -1,7 +1,7 @@
 import { Tab } from '@material-ui/core';
 import React from 'react';
 import createObjectProp from 'react-object-prop';
-import Link from 'react-router-dom/Link';
+import { Link } from 'react-router-dom';
 import Context from '../../../context';
 import withStyles from './header-tab-styles';
 

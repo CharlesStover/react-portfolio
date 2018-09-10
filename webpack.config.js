@@ -1,8 +1,13 @@
 const path = require('path');
 
-const alias = (pkg) => ({
+const alias = pkg => ({
   [pkg]: path.resolve(__dirname, './node_modules/' + pkg)
 });
+
+const NODE_ENV =
+  process.env.NODE_ENV ?
+    process.env.NODE_ENV.trim() :
+    'production';
 
 module.exports = {
   entry: {
@@ -18,17 +23,11 @@ module.exports = {
         root: 'React'
       }
     },
-    '@charlesstover/hsl2rgb',
     '@material-ui/core',
     'react-dom',
-    'react-multi-context',
-    'react-object-prop',
-    'react-router-dom',
-    'react-router-dom/Link',
-    'react-router-dom/Route',
-    'react-router-dom/Switch'
+    'react-router-dom'
   ],
-  mode: 'production',
+  mode: NODE_ENV,
   module: {
     rules: [
       {
@@ -57,13 +56,11 @@ module.exports = {
   },
   resolve: {
     alias: {
-      ...alias('@charlesstover/hsl2rgb'),
       ...alias('@material-ui/core'),
       ...alias('react'),
       ...alias('react-dom'),
-      ...alias('react-multi-context'),
-      ...alias('react-object-prop'),
       ...alias('react-router-dom')
     }
-  }
+  },
+  watch: NODE_ENV === 'development'
 };
