@@ -43,11 +43,11 @@ class HeaderTabs extends React.PureComponent {
       this.tabsRef.scrollLeft += previousMousePosition - e.pageX;
       previousMousePosition = e.pageX;
     }
-  }
+  };
 
   handleTabsRef = tabsRef => {
     this.tabsRef = findDOMNode(tabsRef);
-  }
+  };
 
   get tabsClasses() {
     return this.tabsClassesProp({
@@ -65,6 +65,9 @@ class HeaderTabs extends React.PureComponent {
   }
 
   render() {
+    if (this.props.nav.length === 0) {
+      return null;
+    }
     return (
       <nav className={this.props.classes.nav}>
         <Tabs
