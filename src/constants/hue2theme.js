@@ -6,6 +6,13 @@ const hsl2css = (hue, saturation, lightness) =>
 
 export default hue =>
   createMuiTheme({
+    overrides: {
+      MuiTooltip: {
+        tooltip: {
+          fontSize: '0.8rem'
+        }
+      }
+    },
     palette: {
       background: {
         default: '#202020',
