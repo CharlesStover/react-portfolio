@@ -9,11 +9,11 @@ const SOCIAL_MEDIUMS = 9;
 
 class HeaderSocialLink extends React.PureComponent {
 
+  _style = createObjectProp();
+
   state = {
     active: false
   };
-
-  style = createObjectProp();
 
   activate = () => {
     this.setState({
@@ -21,17 +21,36 @@ class HeaderSocialLink extends React.PureComponent {
     });
   };
 
+  backgroundPosition(index) {
+    return (index * 100 / (SOCIAL_MEDIUMS - 1)) + '% center';
+  }
+
   deactivate = () => {
     this.setState({
       active: false
     });
   };
 
+  get filter() {
+    return this.hueRotate + ' ' + this.saturate + ' brightness(175%)';
+  }
+
+  get hueRotate() {
+    return 'hue-rotate(' + (this.props.hue * 360) + 'deg)';
+  }
+
   get saturate() {
     if (this.state.active) {
-      return 100;
+      return 'saturate(100%)';
     }
-    return 0;
+    return 'saturate(0)';
+  }
+
+  style(index) {
+    return this._style({
+      backgroundPosition: this.backgroundPosition(index),
+      filter: this.filter
+    });
   }
 
   render() {
@@ -40,11 +59,6 @@ class HeaderSocialLink extends React.PureComponent {
     if (props === null) {
       return null;
     }
-
-    const style = this.style({
-      backgroundPosition: (props.index * 100 / (SOCIAL_MEDIUMS - 1)) + '% center',
-      filter: 'hue-rotate(' + (this.props.hue * 360) + 'deg) saturate(' + this.saturate + '%)'
-    });
 
     return (
       <Tooltip title={props.title}>
@@ -57,7 +71,7 @@ class HeaderSocialLink extends React.PureComponent {
           onMouseOut={this.deactivate}
           onMouseOver={this.activate}
           rel="nofollow noopener noreferrer"
-          style={style}
+          style={this.style(props.index)}
           target="_blank"
         >
           <span children={props.title} />
