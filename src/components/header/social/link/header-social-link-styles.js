@@ -10,7 +10,6 @@ export default withStyles({
     backgroundSize: 'auto 100%',
     display: 'inline-block',
     height: SIZE,
-    marginLeft: 12,
     transform: 'scale(1)',
     transitionDuration: '0.5s',
     transitionProperty: 'filter, transform, z-index',
@@ -20,6 +19,9 @@ export default withStyles({
     '&:focus, &:hover': {
       transform: 'scale(2)',
       zIndex: 1199
+    },
+    '&:not(:first-child)': {
+      marginLeft: 12
     },
     '& > span': {
       display: 'none'

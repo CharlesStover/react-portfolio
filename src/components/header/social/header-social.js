@@ -32,7 +32,10 @@ class HeaderSocial extends React.PureComponent {
         variant="caption"
       >
         <span children="Connect with me." />
-        {this.links}
+        <span
+          children={this.links}
+          className={this.props.classes.links}
+        />
       </Typography>
     );
   }

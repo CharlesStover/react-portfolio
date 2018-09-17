@@ -1,5 +1,4 @@
 import { withStyles } from '@material-ui/core';
-import { THEME_SPACING_UNIT } from '../../../constants/styles';
 
 export default withStyles(theme => ({
   root: {
@@ -11,8 +10,17 @@ export default withStyles(theme => ({
     borderBottomWidth: 2,
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
     fontSize: '1em',
     justifyContent: 'center',
-    lineHeight: '48px'
+    lineHeight: '36px',
+    padding: '0.5em 1em',
+    whiteSpace: 'nowrap'
+  },
+  links: {
+    display: 'flex',
+    flexDirection: 'row',
+    lineHeight: '36px',
+    margin: '0 12px'
   }
 }));
