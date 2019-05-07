@@ -14,7 +14,7 @@ class HeaderTitle extends React.PureComponent {
     return (
       <Typography
         className={this.props.classes.root}
-        variant="title"
+        variant="h1"
       >
         <Context
           children={contextConsumer}
