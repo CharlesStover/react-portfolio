@@ -41,5 +41,8 @@ export default hue =>
         main: hsl2css(hue, 0.75, 0.5)
       },
       type: 'dark'
-    }
+    },
+    typography: {
+      useNextVariants: true,
+    },
   });
