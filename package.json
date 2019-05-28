@@ -32,8 +32,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "set NODE_ENV=development && webpack",
-    "prepublishOnly": "npm run build",
-    "test": "jest tests/.+.spec.js"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@charlesstover/hsl2rgb": "^1.0.4",
@@ -57,9 +56,6 @@
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^1.0.0",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
-    "jest": "^23.4.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",

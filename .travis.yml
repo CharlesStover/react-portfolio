@@ -6,7 +6,6 @@ cache: yarn
 install: yarn
 script:
 - yarn build
-- yarn test
 deploy:
   api_key:
     secure: sHYqH2HTRiAw71FLTG2s+tho5wW4tyOkCcf2ELRelqhcNQ95W/+anFqlcaYZaZHaIDo5YiJbUeYm/bW1To6ed9ruJLnkksT/USwYCgF0tdXMTajM+a2x/6IzXE30N+KlsMOuTWhLPX+c5+PG0az5ricDszi6Tz/MIsnYKD0qyDTHYDpMLULGaTkVkMgWTvuA0lXiGH6DDcECX3gcCV+LF3PlDgLDjgGo+UZWpfHzRhbcpmH5s4PZwu/agxDPaJE8aP8AbMIOpYrSO0K7m6H/SrdFToIWkDPUpNq4vEKaY7Dpnj7bYd4Y9lmiuJnNxncw0ClNLD03jzbXo/cUxtZCR5UVhfkLfGbhFjS/QWnzhXWEgolfLpbJIgZLsvRIhCpKmtTS6wIF+s3Rld6PxwkCEFPZ5RcINOTiaC5PnuQe8bAw5/WsVs9yn+a+/FU02yykjY+KZ1GUCxwi1RE94esbWXOpAr/w9S9hg3BLGtaXmBeV0DnLgi+8f0xHYo/fjj6swzyZUBP/Q08RfOzbcpyY7jKrEUSxVG9v4V4VEMvDOe8qmoQnyA4eh/VbdLEEoDnHk+l2YEeTRwB8RpY7XVbVVU3HuW+x3zMddKtemLb66UKaVyhZYt+PXbfNk3udXU7Voci1R1FUuK5PKt40Nxs2XTUM1zqMitnc8wAgLvKZdhA=
