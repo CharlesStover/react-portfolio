@@ -2,8 +2,10 @@
 /.vscode
 /node_modules
 /src
+/tests
 /.babelrc
 /.gitignore
 /.npmignore
 /.travis.yml
+/tsconfig.json
 /webpack.config.js

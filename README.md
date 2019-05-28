@@ -1,20 +1,17 @@
-# react-portfolio
+# react-portfolio [![package](https://img.shields.io/github/package-json/v/CharlesStover/react-portfolio.svg)](https://github.com/CharlesStover/react-portfolio/) [![npm downloads](https://img.shields.io/npm/dt/react-portfolio.svg)](https://www.npmjs.com/package/react-portfolio) [![minzip](https://img.shields.io/bundlephobia/minzip/react-portfolio.svg)](https://www.npmjs.com/package/react-portfolio) [![build](https://travis-ci.com/CharlesStover/react-portfolio.svg)](https://travis-ci.com/CharlesStover/react-portfolio)
+
 A sleek portfolio design created in React.
 
-This project is open-source but is not meant for public use.
-Public use cases will not be considered.
-
-[![package](https://img.shields.io/github/package-json/v/CharlesStover/react-portfolio.svg)](https://github.com/CharlesStover/react-portfolio/)
-[![build](https://travis-ci.com/CharlesStover/react-object-prop.svg)](https://travis-ci.com/CharlesStover/react-portfolio)
-[![npm downloads](https://img.shields.io/npm/dt/react-portfolio.svg)](https://www.npmjs.com/package/react-portfolio)
-[![min](https://img.shields.io/bundlephobia/min/react-portfolio.svg)](https://www.npmjs.com/package/react-portfolio)
-[![minzip](https://img.shields.io/bundlephobia/minzip/react-portfolio.svg)](https://www.npmjs.com/package/react-portfolio)
+This project is open-source but is not meant for public use. Public use cases
+will not be considered.
 
 ## Build
+
 `npm run build`
 
 ## Install
-* `npm install react-portfolio --save` or
+
+* `npm install react-portfolio` or
 * `yarn add react-portfolio`
 
 ## Use
@@ -29,65 +26,68 @@ ReactDOM.render(
     copyright={2008}
     footer={[]}
     hue={0}
-    nav={[]}
     routes={[]}
     social={{}}
     title="My React Portfolio"
   />,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 ```
 
-### Server-Side Rendering
-```JS
-import reactPortfolioServer from 'react-portfolio/server';
-reactPortfolioServer({
-  copyright: 2008,
-  footer: [],
-  hue: 0,
-  nav: [],
-  routes: [],
-  social: {},
-  title: 'My React Portfolio'
-});
-```
-
 ## Props
-* ### copyright: number
+
+### copyright: number
 
   The initial year of copyright for the portfolio.
   Will be displayed as `(c) ${props.year} - ${CURRENT_YEAR}`.
 
-* ### footer: AnchorProps[]
+### footer: AnchorProps[]
 
   An array of `<a>` props to include in the footer.
 
-* ### hue: number
+### hue: number
 
   A number from 0 to 1, representing the hue of your portfolio's accent color.
 
   `0` represents red, `1/3` represents green, `2/3` represents blue.
 
-* ### nav: Nav[]
+### lightness: number
 
-  An array of Nav objects to use as the navigation tabs.
-  A Nav object is structure as `{ path: ..., title: ... }`.
+  A number from 0 to 1, representing the lightness of your portfolio's
+  accent color.
 
-* ### routes: Route[]
+  `0` represents black, `1/2` represents color, `1` represents white.
+
+
+### routes: Route[]
 
   An array of Route objects to use with `react-router`.
   A Route object is structure as `{ component: ..., path: ... }`.
 
-* ### social: Social
+### saturation: number
+
+  A number from 0 to 1, representing the saturation of your portfolio's
+  accent color.
+
+  `0` represents black and white, `1` represents full-color.
+
+### social: Social
 
   A Social object of networking accounts to display in the header.
-  A Social object has the properties `github`, `linkedIn`, `npmjs`, `reddit`, `stackOverflow`, `twitter`, and `youtube`.
 
-* ### title: string
+  A Social object has the properties `github`, `linkedIn`, `npmjs`, `reddit`,
+  `stackOverflow`, `twitter`, and `youtube`.
+
+### theme: Partial<Theme>
+
+  A partial object that will be deep merged with the default Material UI theme.
+
+### title: string
 
   The title of the portfolio, displayed in the header.
 
 ## Examples
+
 * [AceAlters.com](https://acealters.com/)
 * [CharlesStover.com](https://charlesstover.com/)
 * [Quisido.com](https://quisido.com/)

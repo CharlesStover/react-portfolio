@@ -1,0 +1,36 @@
+::-webkit-scrollbar {
+  font-size: 8px;
+  width: 1em;
+}
+
+::-webkit-scrollbar-button:end:increment,
+::-webkit-scrollbar-button:start:decrement {
+  height: 0.25em;
+  visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background-color: rgba(128, 128, 128, 0.25);
+  border-radius: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+#root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}

@@ -1,41 +1,18 @@
 {
   "name": "react-portfolio",
-  "version": "1.1.6",
+  "version": "1.3.0",
   "author": "Charles Stover",
+  "description": "A sleek portfolio design created in React.",
+  "homepage": "https://github.com/CharlesStover/react-portfolio#readme",
+  "license": "MIT",
+  "main": "index.js",
   "bugs": {
     "url": "https://github.com/CharlesStover/react-portfolio/issues"
   },
-  "dependencies": {
-    "@charlesstover/hsl2rgb": "^1.0.4",
-    "delimiter": "^1.0.0",
-    "memoize-one": "^4.0.0",
-    "react-helmet": "^5.2.0",
-    "react-multi-context": "^1.1.1",
-    "react-object-prop": "^1.0.5"
-  },
-  "description": "A sleek portfolio design created in React.",
-  "devDependencies": {
-    "@babel/core": "^7.0.0-beta.53",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.53",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.53",
-    "@babel/preset-env": "^7.0.0-beta.53",
-    "@babel/preset-react": "^7.0.0-rc.0",
-    "@material-ui/core": "^3.0.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.4.2",
-    "babel-loader": "^8.0.0-beta.4",
-    "css-loader": "^1.0.0",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
-    "jest": "^23.4.2",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
-    "react-router-dom": "^4.3.1",
-    "style-loader": "^0.21.0",
-    "url-loader": "^1.0.1",
-    "webpack": "^4.16.0",
-    "webpack-cli": "^3.0.8"
-  },
+  "files": [
+    "index.js",
+    "props.d.ts"
+  ],
   "jest": {
     "moduleNameMapper": {
       "\\.css$": "<rootDir>/tests/__mocks__/css.js",
@@ -43,20 +20,11 @@
     },
     "testURL": "http://localhost/"
   },
-  "homepage": "https://github.com/CharlesStover/react-portfolio#readme",
   "keywords": [
     "reactjs",
     "react",
     "portfolio"
   ],
-  "license": "MIT",
-  "main": "index.js",
-  "peerDependencies": {
-    "@material-ui/core": "^3.0.0",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
-    "react-router-dom": "^4.3.1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CharlesStover/react-portfolio.git"
@@ -66,5 +34,45 @@
     "dev": "set NODE_ENV=development && webpack",
     "prepublishOnly": "npm run build",
     "test": "jest tests/.+.spec.js"
+  },
+  "dependencies": {
+    "@charlesstover/hsl2rgb": "^1.0.4",
+    "deepmerge": "^3.2.0",
+    "delimiter": "^1.0.0",
+    "react-helmet": "^5.2.0",
+    "react-multi-context": "^1.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@material-ui/core": "^4.0.0",
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-router-dom": "^4.3.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "jest": "^23.4.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^4.3.1",
+    "style-loader": "^0.21.0",
+    "typescript": "^3.4.5",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.0.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-router-dom": "^4.3.1"
   }
 }

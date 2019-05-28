@@ -11,8 +11,7 @@ const NODE_ENV =
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    server: './src/server.js'
+    index: './src/index.tsx',
   },
   externals: [
     {
@@ -20,47 +19,54 @@ module.exports = {
         amd: 'react',
         commonjs: 'react',
         commonjs2: 'react',
-        root: 'React'
-      }
+        root: 'React',
+      },
     },
     '@material-ui/core',
+    '@material-ui/styles',
+    '@material-ui/system',
+    '@material-ui/types',
+    '@material-ui/utils',
     'react-dom',
-    'react-router-dom'
+    'react-router-dom',
   ],
   mode: NODE_ENV,
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: [ 'style-loader', 'css-loader' ],
       },
       {
         test: [ /\.(?:gif|ico|jpe?g|png)$/ ],
-        loader: require.resolve('url-loader')
+        loader: require.resolve('url-loader'),
       },
       {
-        include: path.resolve(__dirname, 'src'),
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader'
-        }
-      }
-    ]
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        test: /\.[jt]sx?$/,
+      },
+    ],
   },
   output: {
-    filename: '[name].js',
+    filename: '../quisido.com/node_modules/react-portfolio/[name].js',
     library: 'react-portfolio',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, '.'),
-    umdNamedDefine: true
+    umdNamedDefine: true,
   },
   resolve: {
     alias: {
       ...alias('@material-ui/core'),
+      ...alias('@material-ui/styles'),
+      ...alias('@material-ui/system'),
+      ...alias('@material-ui/types'),
+      ...alias('@material-ui/utils'),
       ...alias('react'),
       ...alias('react-dom'),
-      ...alias('react-router-dom')
-    }
+      ...alias('react-router-dom'),
+    },
+    extensions: [ '.js', '.json', '.jsx', '.ts', '.tsx' ],
   },
-  watch: NODE_ENV === 'development'
+  watch: NODE_ENV === 'development',
 };
