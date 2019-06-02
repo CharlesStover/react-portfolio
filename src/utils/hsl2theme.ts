@@ -16,8 +16,8 @@ export default function hsl2theme(
   const primaryDark = hsl2css(primary, saturation, lightness / 2);
   const secondaryDark = hsl2css(_secondary, saturation, lightness / 2);
 
-  return deepmerge(
-    createMuiTheme({
+  return createMuiTheme(deepmerge(
+    {
       overrides: {
         MuiAppBar: {
           colorPrimary: {
@@ -82,7 +82,7 @@ export default function hsl2theme(
       typography: {
         htmlFontSize: 16,
       },
-    }),
+    },
     themeOptions,
-  );
+  ));
 }
