@@ -25,8 +25,10 @@ ReactDOM.render(
   <ReactPortfolio
     copyright={2008}
     footer={[]}
-    hue={0}
+    primary={0}
+    resume="https://yoursite.com/resume.pdf"
     routes={[]}
+    secondary={0}
     social={{}}
     title="My React Portfolio"
   />,
@@ -45,12 +47,6 @@ ReactDOM.render(
 
   An array of `<a>` props to include in the footer.
 
-### hue: number
-
-  A number from 0 to 1, representing the hue of your portfolio's accent color.
-
-  `0` represents red, `1/3` represents green, `2/3` represents blue.
-
 ### lightness: number
 
   A number from 0 to 1, representing the lightness of your portfolio's
@@ -58,6 +54,15 @@ ReactDOM.render(
 
   `0` represents black, `1/2` represents color, `1` represents white.
 
+### primary: number
+
+  A number from 0 to 1, representing the hue of your portfolio's primary color.
+
+  `0` represents red, `1/3` represents green, `2/3` represents blue.
+
+### resume: string
+
+  A URL pointing to a downloadable copy of your resume.
 
 ### routes: Route[]
 
@@ -70,6 +75,13 @@ ReactDOM.render(
   accent color.
 
   `0` represents black and white, `1` represents full-color.
+
+### secondary: number
+
+  A number from 0 to 1, representing the hue of your portfolio's secondary
+  color.
+
+  `0` represents red, `1/3` represents green, `2/3` represents blue.
 
 ### social: Social
 

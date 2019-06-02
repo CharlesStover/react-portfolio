@@ -5,7 +5,7 @@ const styles: StyleRulesCallback = theme => ({
     alignItems: 'center',
     alignSelf: 'stretch',
     backgroundColor: 'inherit',
-    borderBottomColor: theme.palette.secondary.main,
+    borderBottomColor: theme.palette.primary.dark,
     borderBottomStyle: 'solid',
     borderBottomWidth: 2,
     display: 'flex',

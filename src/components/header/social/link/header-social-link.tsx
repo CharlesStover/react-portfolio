@@ -4,9 +4,21 @@ import Context from '../../../context';
 import withStyles from './header-social-link-styles';
 import linkProps from './header-social-link-props';
 
-const SOCIAL_MEDIUMS = 9;
+interface IProps {
+  classes: Record<string, string>;
+  medium: string;
+  saturation: number;
+  secondary: number;
+  value: string;
+}
 
-class HeaderSocialLink extends React.PureComponent {
+interface IState {
+  active: boolean;
+}
+
+const SOCIAL_MEDIUMS: number = 9;
+
+class HeaderSocialLink extends React.Component<IProps, IState> {
 
   state = {
     active: false
@@ -18,39 +30,39 @@ class HeaderSocialLink extends React.PureComponent {
     });
   };
 
-  backgroundPosition(index) {
+  backgroundPosition(index: number) {
     return (index * 100 / (SOCIAL_MEDIUMS - 1)) + '% center';
   }
 
-  deactivate = () => {
+  deactivate = (): void => {
     this.setState({
       active: false
     });
   };
 
-  get filter() {
+  get filter(): string {
     return this.hueRotate + ' ' + this.saturate + ' brightness(175%)';
   }
 
-  get hueRotate() {
-    return 'hue-rotate(' + (this.props.hue * 360) + 'deg)';
+  get hueRotate(): string {
+    return 'hue-rotate(' + (this.props.secondary * 360) + 'deg)';
   }
 
-  get saturate() {
+  get saturate(): string {
     if (this.state.active) {
-      return 'saturate(100%)';
+      return `saturate(${this.props.saturation * 100}%)`;
     }
     return 'saturate(0)';
   }
 
-  style(index) {
+  style(index: number): React.CSSProperties {
     return {
       backgroundPosition: this.backgroundPosition(index),
-      filter: this.filter
+      filter: this.filter,
     };
   }
 
-  render() {
+  render(): JSX.Element | null {
     const props = linkProps(this.props.medium, this.props.value);
 
     if (props === null) {
@@ -78,4 +90,4 @@ class HeaderSocialLink extends React.PureComponent {
   }
 }
 
-export default Context.with('hue')(withStyles(HeaderSocialLink));
+export default withStyles(Context.with('saturation', 'secondary')(HeaderSocialLink));

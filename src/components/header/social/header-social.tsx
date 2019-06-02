@@ -1,44 +1,44 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
+import { Social } from '../../../../props';
 import Context from '../../context';
 import withStyles from './header-social-styles';
 import Link from './link';
 
-class HeaderSocial extends React.PureComponent {
+interface IProps {
+  classes: Record<string, string>;
+  social: Social;
+}
 
-  get links() {
-    return Object.entries(this.props.social).map(
-      ([ medium, value ]) =>
-        <Link
-          key={medium}
-          medium={medium}
-          value={value}
-        />
-    );
-  }
+const mapSocialToLinks = ([ medium, value ]: [ string, string ]) =>
+  <Link
+    key={medium}
+    medium={medium}
+    value={value}
+  />;
 
-  render() {
+export default withStyles(Context.with('social')(
+  function HeaderSocial({ classes, social }: IProps): JSX.Element | null {
+
+    const socialEntries: [ string, string ][] = Object.entries(social);
 
     // If there are no social links, don't render a social bar.
-    if (this.props.social.length === 0) {
+    if (socialEntries.length === 0) {
       return null;
     }
 
     // If there are social links, render them.
     return (
       <Typography
-        className={this.props.classes.root}
+        className={classes.root}
         role="navigation"
         variant="caption"
       >
-        <span children="Connect with me." />
-        <span
-          children={this.links}
-          className={this.props.classes.links}
-        />
+        <span>Connect with me.</span>
+        <span className={classes.links}>
+          {socialEntries.map(mapSocialToLinks)}
+        </span>
       </Typography>
     );
   }
-}
-
-export default Context.with('social')(withStyles(HeaderSocial));
+));

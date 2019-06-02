@@ -4,7 +4,7 @@ declare module '@charlesstover/hsl2rgb' {
 }
 
 declare module 'react-multi-context' {
-  import { ComponentClass } from 'react';
+  import { ComponentClass, FunctionComponent } from 'react';
   interface Getter<T, K extends Array<keyof T> = Array<keyof T>> {
     children: (...keys: Array<T[keyof T]>) => JSX.Element;
     get: K;
@@ -15,7 +15,7 @@ declare module 'react-multi-context' {
   }
   const _: <T>(context: T) => ComponentClass<Getter<T> | Setter<T>> & {
     with<U extends Partial<T>>(...keys: Array<keyof U>): <P extends {}>(
-      Component: ComponentClass<U & P>,
+      Component: ComponentClass<U & P> | FunctionComponent<P>,
     ) => ComponentClass<P>;
   };
   export default _;

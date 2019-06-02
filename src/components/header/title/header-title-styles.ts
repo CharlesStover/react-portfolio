@@ -6,8 +6,7 @@ export default withStyles({
     display: 'flex',
     flexGrow: 1,
     fontFamily: '"Architects Daughter", cursive',
-    paddingLeft: '1em',
-    paddingRight: '1em',
     fontSize: '1.333rem',
+    padding: 0,
   }
 });

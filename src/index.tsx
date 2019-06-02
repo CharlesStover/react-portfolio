@@ -21,7 +21,8 @@ export default function Portfolio(props: IProps): JSX.Element {
           theme: ThemeOptions,
         ): JSX.Element =>
           <MuiThemeProvider theme={hsl2theme(
-            props.hue,
+            props.primary,
+            props.secondary,
             saturation,
             lightness,
             theme,

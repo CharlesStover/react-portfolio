@@ -1,14 +1,13 @@
 import { withStyles } from '@material-ui/core';
-
-const MOBILE_MEDIA_QUERY = '@media (max-width: 767px)';
+import { MOBILE_MEDIA_QUERY } from '../../../utils/media-queries';
 
 export default withStyles({
-  toolbar: {
-    alignItems: 'stretch',
+  root: {
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    padding: 0,
+    padding: '1em',
     [MOBILE_MEDIA_QUERY]: {
       flexDirection: 'column',
     },

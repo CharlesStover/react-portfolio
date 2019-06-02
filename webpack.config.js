@@ -9,6 +9,11 @@ const NODE_ENV =
     process.env.NODE_ENV.trim() :
     'production';
 
+const OUTPUT_DIRECTORY =
+  process.env.REPOSITORY ?
+    `../${process.env.REPOSITORY}/node_modules/react-portfolio/` :
+    '';
+
 module.exports = {
   entry: {
     index: './src/index.tsx',
@@ -49,7 +54,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: '../quisido.com/node_modules/react-portfolio/[name].js',
+    filename: `${OUTPUT_DIRECTORY}[name].js`,
     library: 'react-portfolio',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, '.'),

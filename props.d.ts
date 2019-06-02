@@ -23,18 +23,20 @@ export interface Social {
 }
 
 export default interface IProps {
-  copyright: number;
-  footer: Array<
+  copyright?: number;
+  footer?: Array<
     DetailedHTMLProps<
       AnchorHTMLAttributes<HTMLAnchorElement>,
       HTMLAnchorElement
     >
   >;
-  hue: number;
   lightness?: number;
-  routes: Route[];
+  primary: number;
+  resume?: string;
+  routes?: Route[];
   saturation?: number;
-  social: Social;
+  secondary?: number;
+  social?: Social;
   theme?: any;
   title: string;
 }

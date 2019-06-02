@@ -1,12 +1,12 @@
 import { withStyles } from '@material-ui/core';
 import backgroundImage from '../../../../assets/social.png';
 
-const SIZE = 24;
+const SIZE: number = 24;
 
 export default withStyles({
   root: {
     backgroundColor: 'transparent',
-    backgroundImage: 'url("' + backgroundImage + '")',
+    backgroundImage: `url("${backgroundImage}")`,
     backgroundSize: 'auto 100%',
     display: 'inline-block',
     height: SIZE,
@@ -18,13 +18,13 @@ export default withStyles({
     zIndex: 1101,
     '&:focus, &:hover': {
       transform: 'scale(2)',
-      zIndex: 1199
+      zIndex: 1199,
     },
     '&:not(:first-child)': {
-      marginLeft: 12
+      marginLeft: 12,
     },
     '& > span': {
-      display: 'none'
-    }
-  }
+      display: 'none',
+    },
+  },
 });

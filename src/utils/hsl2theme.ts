@@ -4,16 +4,55 @@ import deepmerge from 'deepmerge';
 import hsl2css from './hsl2css';
 
 export default function hsl2theme(
-  hue: number,
+  primary: number,
+  secondary: number | void,
   saturation: number,
   lightness: number,
   themeOptions: ThemeOptions = {},
 ): Theme {
+  const _secondary = secondary || primary;
+
+  const backgroundColor = hsl2css(primary, 0.25, 38.5 / 256);
+  const primaryDark = hsl2css(primary, saturation, lightness / 2);
+  const secondaryDark = hsl2css(_secondary, saturation, lightness / 2);
+
   return deepmerge(
     createMuiTheme({
+      overrides: {
+        MuiAppBar: {
+          colorPrimary: {
+            backgroundColor: hsl2css(primary, saturation, 0.125),
+          },
+          colorSecondary: {
+            backgroundColor: hsl2css(_secondary, saturation, 0.125),
+          },
+        },
+        MuiCssBaseline: {
+          '@global': {
+            body: {
+              fontSize: '1em',
+            },
+          },
+        },
+        MuiPaper: {
+          root: {
+            backgroundColor,
+          },
+        },
+        MuiTooltip: {
+          tooltip: {
+            backgroundColor,
+            borderColor: primaryDark,
+            borderStyle: 'solid',
+            borderWidth: 1,
+            fontSize: '0.8em',
+            padding: '0.5em 1em',
+          },
+        },
+      },
       palette: {
         background: {
-          default: '#202020',
+          default: hsl2css(primary, 1, 16 / 256),
           paper: '#303030',
         },
         common: {
@@ -28,15 +67,15 @@ export default function hsl2theme(
         },
         primary: {
           contrastText: '#202020',
-          dark:  hsl2css(hue, saturation,     lightness / 2),
-          light: hsl2css(hue, saturation, 1 - lightness / 2),
-          main:  hsl2css(hue, saturation,     lightness),
+          dark: primaryDark,
+          light: hsl2css(primary, saturation, 1 - lightness / 2),
+          main:  hsl2css(primary, saturation,     lightness),
         },
         secondary: {
           contrastText: '#202020',
-          dark:  hsl2css(hue, 1 - saturation / 2,     lightness / 2),
-          light: hsl2css(hue, 1 - saturation / 2, 1 - lightness / 2),
-          main:  hsl2css(hue, 1 - saturation / 2,     lightness),
+          dark: secondaryDark,
+          light: hsl2css(_secondary, saturation, 1 - lightness / 2),
+          main:  hsl2css(_secondary, saturation,     lightness),
         },
         type: 'dark',
       },
