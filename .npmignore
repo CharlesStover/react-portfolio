@@ -7,5 +7,7 @@
 /.gitignore
 /.npmignore
 /.travis.yml
+/package-lock.json
 /tsconfig.json
 /webpack.config.js
+/yarn.lock

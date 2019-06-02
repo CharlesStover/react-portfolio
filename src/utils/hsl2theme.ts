@@ -1,6 +1,6 @@
 import { createMuiTheme, Theme } from '@material-ui/core';
 import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
-import * as deepmerge from 'deepmerge'
+import merge from 'lodash.merge';
 import hsl2css from './hsl2css';
 
 export default function hsl2theme(
@@ -83,6 +83,6 @@ export default function hsl2theme(
     },
   };
 
-  const themeOptions = deepmerge.all([ baseThemeOptions, customThemeOptions ]);
+  const themeOptions = merge(baseThemeOptions, customThemeOptions);
   return createMuiTheme(themeOptions);
 }
