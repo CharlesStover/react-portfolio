@@ -8,7 +8,7 @@ export default function hsl2theme(
   secondary: number | void,
   saturation: number,
   lightness: number,
-  themeOptions: ThemeOptions = {},
+  customThemeOptions: ThemeOptions = {},
 ): Theme {
   const _secondary = secondary || primary;
 
@@ -16,73 +16,73 @@ export default function hsl2theme(
   const primaryDark = hsl2css(primary, saturation, lightness / 2);
   const secondaryDark = hsl2css(_secondary, saturation, lightness / 2);
 
-  return createMuiTheme(deepmerge(
-    {
-      overrides: {
-        MuiAppBar: {
-          colorPrimary: {
-            backgroundColor: hsl2css(primary, saturation, 0.125),
-          },
-          colorSecondary: {
-            backgroundColor: hsl2css(_secondary, saturation, 0.125),
-          },
+  const baseThemeOptions = {
+    overrides: {
+      MuiAppBar: {
+        colorPrimary: {
+          backgroundColor: hsl2css(primary, saturation, 0.125),
         },
-        MuiCssBaseline: {
-          '@global': {
-            body: {
-              fontSize: '1em',
-            },
-          },
+        colorSecondary: {
+          backgroundColor: hsl2css(_secondary, saturation, 0.125),
         },
-        MuiPaper: {
-          root: {
-            backgroundColor,
-          },
-        },
-        MuiTooltip: {
-          tooltip: {
-            backgroundColor,
-            borderColor: primaryDark,
-            borderStyle: 'solid',
-            borderWidth: 1,
-            fontSize: '0.8em',
-            padding: '0.5em 1em',
+      },
+      MuiCssBaseline: {
+        '@global': {
+          body: {
+            fontSize: '1em',
           },
         },
       },
-      palette: {
-        background: {
-          default: hsl2css(primary, 1, 16 / 256),
-          paper: '#303030',
+      MuiPaper: {
+        root: {
+          backgroundColor,
         },
-        common: {
-          black: '#202020',
-          white: '#F0F0F0',
-        },
-        error: {
-          contrastText: '#000000',
-          dark: '#C8839B',
-          light: '#FFE6FF',
-          main: '#FCB3CC',
-        },
-        primary: {
-          contrastText: '#202020',
-          dark: primaryDark,
-          light: hsl2css(primary, saturation, 1 - lightness / 2),
-          main:  hsl2css(primary, saturation,     lightness),
-        },
-        secondary: {
-          contrastText: '#202020',
-          dark: secondaryDark,
-          light: hsl2css(_secondary, saturation, 1 - lightness / 2),
-          main:  hsl2css(_secondary, saturation,     lightness),
-        },
-        type: 'dark',
       },
-      typography: {
-        htmlFontSize: 16,
+      MuiTooltip: {
+        tooltip: {
+          backgroundColor,
+          borderColor: primaryDark,
+          borderStyle: 'solid',
+          borderWidth: 1,
+          fontSize: '0.8em',
+          padding: '0.5em 1em',
+        },
       },
     },
-    themeOptions,
-  ));
+    palette: {
+      background: {
+        default: hsl2css(primary, 1, 16 / 256),
+        paper: '#303030',
+      },
+      common: {
+        black: '#202020',
+        white: '#F0F0F0',
+      },
+      error: {
+        contrastText: '#000000',
+        dark: '#C8839B',
+        light: '#FFE6FF',
+        main: '#FCB3CC',
+      },
+      primary: {
+        contrastText: '#202020',
+        dark: primaryDark,
+        light: hsl2css(primary, saturation, 1 - lightness / 2),
+        main:  hsl2css(primary, saturation,     lightness),
+      },
+      secondary: {
+        contrastText: '#202020',
+        dark: secondaryDark,
+        light: hsl2css(_secondary, saturation, 1 - lightness / 2),
+        main:  hsl2css(_secondary, saturation,     lightness),
+      },
+      type: 'dark',
+    },
+    typography: {
+      htmlFontSize: 16,
+    },
+  };
+
+  const themeOptions = deepmerge(baseThemeOptions, customThemeOptions);
+  return createMuiTheme(themeOptions);
 }
