@@ -11,12 +11,12 @@ interface IProps {
   routes: RouteProp[];
 }
 
-export default Context.with('routes')(withStyles(
-  function Main({ classes, pathname, routes }: IProps): JSX.Element {
+export default withStyles(Context.with('routes')(
+  function Main({ classes, routes }: IProps): JSX.Element {
     return (
       <main className={classes.root}>
         <Switch>
-          {routes.map((route: Prop) =>
+          {routes.map((route: RouteProp) =>
             <Route
               exact
               key={route.path}
@@ -30,14 +30,14 @@ export default Context.with('routes')(withStyles(
                         route.description &&
                         <meta
                           name="description"
-                          value={route.description}
+                          content={route.description}
                         />
                       }
                       {
                         route.keywords &&
                         <meta
                           name="keywords"
-                          value={route.keywords.join(', ')}
+                          content={route.keywords.join(', ')}
                         />
                       }
                       {
