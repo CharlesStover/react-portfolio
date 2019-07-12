@@ -3496,8 +3496,9 @@ react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1:
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
 react-multi-context@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/react-multi-context/-/react-multi-context-1.1.1.tgz#7b9e288b7be5bd36ce20449f78ada738c0275d98"
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-multi-context/-/react-multi-context-1.1.2.tgz#bedc8a36a08157e5379589c9a43be983c616cc7b"
+  integrity sha512-yqPM0rbW0XKgLTLS9PfU+yvCvumdosMU1EEZ0fewONnuHnFMJkPSnxLW6bC2AFvEohJ4Bcx8iZRr1L++cp7ANw==
 
 react-router-dom@^4.3.1:
   version "4.3.1"
